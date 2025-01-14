@@ -1,7 +1,11 @@
+import ImageCarousel from '@/components/Home/Carousel';
+import Hero from '../components/Home/Hero'
+
 export default function HomePage() {
   return (
     <div>
-      <h1>Welcome to Comuni</h1>
+    <Hero/>
+    <ImageCarousel/>
     </div>
   );
 }
