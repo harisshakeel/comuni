@@ -1,10 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Link,
   IconButton,
   Drawer,
@@ -13,8 +12,9 @@ import {
   ListItemButton,
   ListItemText,
   Box,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import "@fontsource/boogaloo"; // Import Boogaloo font
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -29,23 +29,27 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
     setDrawerOpen(open);
   };
 
   const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
+    { label: "Home", href: "/" },
+    { label: "Features", href: "/features" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const drawerContent = (
@@ -59,7 +63,16 @@ const Navbar = () => {
         {navLinks.map((link) => (
           <ListItem key={link.label} disablePadding>
             <ListItemButton component="a" href={link.href}>
-              <ListItemText primary={link.label} />
+              <ListItemText
+                primary={link.label}
+                primaryTypographyProps={{
+                  sx: {
+                    fontFamily: "Boogaloo, cursive", // Apply Boogaloo font
+                    fontSize: "1.2rem",
+                    color: "#e129fa", // Set the color to #e129fa
+                  },
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -72,31 +85,49 @@ const Navbar = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.8)' : 'transparent',
-          transition: 'background-color 0.3s ease',
+          backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.8)" : "transparent",
+          transition: "background-color 0.3s ease",
           boxShadow: isScrolled ? 3 : 0,
+          paddingLeft: { xs: 2, sm: 10 }, // Add left padding (adjust as needed)
+          paddingRight: { xs: 2, sm: 10 }, // Add right padding (adjust as needed)
         }}
       >
         <Toolbar>
-          <Box
-            component="img"
-            src="/logo.png" // Update with your actual path
-            alt="Comuni Logo"
-            sx={{
-              height: 40, // Adjust the size as needed
-              marginRight: 2,
-            }}
-          />
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Comuni
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+            <Box
+              component="img"
+              src="/logo.png" // Update with your actual path
+              alt="Comuni Logo"
+              sx={{
+                height: 70, // Adjust the size as needed
+                marginRight: -3,
+                marginTop: "-13px", // Move the logo up by 10px, adjust as needed
+              }}
+            />
+
+            <Box
+              component="img"
+              src="/textlogo.png" // Update with the actual path for textlogo.png
+              alt="Comuni Text Logo"
+              sx={{
+                height: 120, // Adjust height as needed
+                objectFit: "contain", // Ensures the image fits well within its container
+              }}
+            />
+          </Box>
+
+          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 color="inherit"
-                sx={{ mx: 2, textDecoration: 'none' }}
+                sx={{
+                  mx: 2,
+                  textDecoration: "none",
+                  fontFamily: "Boogaloo, cursive", // Apply Boogaloo font
+                  fontSize: "1.2rem",
+                }}
               >
                 {link.label}
               </Link>
@@ -106,7 +137,7 @@ const Navbar = () => {
             edge="end"
             color="inherit"
             aria-label="menu"
-            sx={{ display: { xs: 'block', sm: 'none' } }}
+            sx={{ display: { xs: "block", sm: "none" } }}
             onClick={toggleDrawer(true)}
           >
             <MenuIcon />

@@ -1,32 +1,36 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from "@mui/material";
+import Heading from "../../components/Heading";
 
 export default function Contact() {
   return (
-    <Box
-      sx={{
-        background: "linear-gradient(to right, rgba(234, 41, 250, 0.5), rgba(255, 0, 148, 0.5), rgba(255, 1, 81, 0.5), rgba(202, 0, 243, 0.5))", // Transparent gradient background
-        color: '#ffffff',          // White text
-        minHeight: '100vh',        // Full viewport height
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 0,                 // Remove any margin
-        padding: 0,                // Remove any padding
-      }}
-    >
-      <Typography
-        variant="h1"
-        component="h1"
+    <div>
+      <Heading heading="" subheading="" />
+      <Box
         sx={{
-          fontSize: '2rem',
-          textAlign: 'center',
-          margin: 0,              // Remove margin for Typography
-          padding: 0,             // Remove padding for Typography
+          backgroundColor: "#121212", // Dark background
+          color: "#ffffff", // White text
+          minHeight: "100vh", // Full viewport height
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: 0, // Remove any margin
+          padding: 0, // Remove any padding
         }}
       >
-        Contact US
-      </Typography>
-    </Box>
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{
+            fontSize: "2rem",
+            textAlign: "center",
+            margin: 0, // Remove margin for Typography
+            padding: 0, // Remove padding for Typography
+          }}
+        >
+          About US
+        </Typography>
+      </Box>
+    </div>
   );
 }
