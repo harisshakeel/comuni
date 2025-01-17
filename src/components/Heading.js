@@ -1,47 +1,88 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Box, Typography } from '@mui/material';
+"use client";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Box, Typography } from "@mui/material";
 
 const Heading = ({ heading, subheading }) => {
+  const [animateBox, setAnimateBox] = useState(false);
+  const [animateText, setAnimateText] = useState(false);
+
+  useEffect(() => {
+    // Trigger the box animation on component mount
+    setAnimateBox(true);
+
+    // Delay text animation to occur after the box transition
+    const textAnimationTimeout = setTimeout(() => {
+      setAnimateText(true);
+    }, 1700); // Adjust delay to match the slower box transition duration
+
+    return () => clearTimeout(textAnimationTimeout); // Cleanup timeout
+  }, []);
+
   return (
     <Box
       sx={{
-        textAlign: 'center',
-        backgroundColor: '#e129fa', // Setting background color
-        padding: '0', // Remove padding to eliminate extra space
-        margin: 0, // Ensure no margin is added
-        height: '40vh', // Set height to 40% of the viewport height
-        display: 'flex', // Using flex to center content vertically
-        flexDirection: 'column', // Stack elements vertically
-        justifyContent: 'center', // Center content vertically
-        alignItems: 'center', // Center content horizontally
+        position: "relative",
+        backgroundColor: "#e129fa",
+        padding: "0",
+        margin: 0,
+        height: "90vh",
+        overflow: "hidden",
       }}
     >
-      <Typography
-        variant="h4"
+      {/* Box on the left with slide-in animation */}
+      <Box
         sx={{
-          fontWeight: 700,
-          fontSize: '2rem', // Adjust size as needed
-          color: '#fff', // Set text color to white for contrast
-          margin: 0, // Remove any margin from the typography elements
+          position: "absolute",
+          top: 0,
+          left: animateBox ? 0 : "-40%",
+          width: "40%",
+          height: "100%",
+          backgroundColor: "#00c6b8",
+          zIndex: 1,
+          transition: "left 1.5s ease-in-out", // Slower transition for the box
+        }}
+      />
+      {/* Text container with delayed slide-down animation */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: animateText ? "50%" : "-30%", // Start above the viewport
+          left: "20%",
+          transform: "translateY(-50%)",
+          zIndex: 2,
+          width: "40%",
+          transition: "top 1.5s ease-in-out", // Slower transition for the text
         }}
       >
-        {heading}
-      </Typography>
-      {subheading && (
         <Typography
-          variant="h6"
+          variant="h4"
           sx={{
-            fontWeight: 400,
-            fontSize: '1.2rem',
-            marginTop: '8px',
-            color: '#fff', // White color for subheading to match
-            margin: 0, // Remove any margin from the subheading
+            fontWeight: "bold",
+            fontSize: "6rem",
+            color: "#fff",
+            textAlign: "center",
+            margin: 0,
           }}
         >
-          {subheading}
+          {heading}
         </Typography>
-      )}
+        {subheading && (
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              fontSize: "2.5rem",
+              marginTop: "8px",
+              color: "#fff",
+              textAlign: "center",
+              margin: 0,
+            }}
+          >
+            {subheading}
+          </Typography>
+        )}
+      </Box>
     </Box>
   );
 };

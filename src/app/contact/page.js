@@ -4,7 +4,7 @@ import Heading from "../../components/Heading";
 export default function Contact() {
   return (
     <div>
-      <Heading heading="" subheading="" />
+      <Heading heading="CONTACT US" subheading="HOW TO REACH US OUT?" />
       <Box
         sx={{
           backgroundColor: "#121212", // Dark background
@@ -28,7 +28,7 @@ export default function Contact() {
             padding: 0, // Remove padding for Typography
           }}
         >
-          About US
+          Contact US
         </Typography>
       </Box>
     </div>

@@ -1,10 +1,10 @@
-// components/Hero.js
 "use client";
 
 import React from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import heroImage from "../../../public/hero.jpeg"; // Import the image
 import "@fontsource/spicy-rice"; // Import the Spicy Rice font
+import { motion } from "framer-motion"; // Import framer-motion
 
 const Hero = () => {
   return (
@@ -14,7 +14,7 @@ const Hero = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "80vh",
+        minHeight: "90vh",
         backgroundImage: `url(${heroImage.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -29,7 +29,6 @@ const Hero = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          //backgroundColor: "rgba(0, 0, 0, 0.1)", // Slight black tint
           zIndex: 1,
         },
       }}
@@ -41,31 +40,45 @@ const Hero = () => {
           zIndex: 2, // Ensure the text is above the overlay
         }}
       >
-        <Typography
-          variant="h2"
-          component="h1"
-          gutterBottom
-          sx={{
-            fontFamily: "Spicy Rice, cursive",
-            fontWeight: 400,
-            textTransform: "uppercase", // Make all text uppercase
-          }}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }} // Start off-screen from the left
+          animate={{ opacity: 1, x: 0 }} // Fade in and move to its original position
+          transition={{ duration: 1, ease: "easeOut" }} // Transition effect
         >
-          Welcome to <span style={{ color: "#e129fa" }}>Comuni</span>
-        </Typography>
-        <Typography
-          variant="h6"
-          paragraph
-          sx={{
-            fontFamily: "Spicy Rice, cursive",
-            fontWeight: 400,
-          }}
+          <Typography
+            variant="h2"
+            component="h1"
+            gutterBottom
+            sx={{
+              fontFamily: "Spicy Rice, cursive",
+              fontWeight: 400,
+              textTransform: "uppercase",
+            }}
+          >
+            Welcome to <span style={{ color: "#e129fa" }}>Comuni</span>
+          </Typography>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          Discover the best way to{" "}
-          <span style={{ color: "#e129fa" }}>connect</span> with your{" "}
-          <span style={{ color: "#e129fa" }}>community</span>. Let's build
-          something amazing together!
-        </Typography>
+          <Typography
+            variant="h6"
+            paragraph
+            sx={{
+              fontFamily: "Spicy Rice, cursive",
+              fontWeight: 400,
+            }}
+          >
+            Discover the best way to{" "}
+            <span style={{ color: "#e129fa" }}>connect</span> with your{" "}
+            <span style={{ color: "#e129fa" }}>community</span>. Let's build
+            something amazing together!
+          </Typography>
+        </motion.div>
+
         <Button
           variant="contained"
           size="large"
@@ -91,10 +104,9 @@ const Hero = () => {
           }}
           href="#about"
         >
-          Get Started
+          LEARN MORE!
         </Button>
       </Container>
-
       {/* Wavy bottom */}
       {/* <Box
         sx={{

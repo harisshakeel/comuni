@@ -7,36 +7,54 @@ const Owners = () => {
       {/* First Row: Image on Left, Text on Right */}
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
-          <Paper
-            elevation={3}
+          <Box
             sx={{
+              position: "relative",
+              //backgroundColor: "black",
               borderRadius: "16px",
               overflow: "hidden",
-              position: "relative",
               width: "100%",
               height: "auto",
               aspectRatio: "4/3", // Ensures consistent aspect ratio
             }}
           >
+            {/* Color box behind the image */}
+            <Box
+              sx={{
+                position: "absolute",
+                width: "90%", // Slightly larger than the image
+                height: "90%", // Slightly larger than the image
+                backgroundColor: "#e129fa", // Replace with your desired color
+                zIndex: 1,
+                borderRadius: "16px", // Matches the image border radius
+              }}
+            ></Box>
+            {/* Image on bottom-left corner */}
             <img
-              src="/image1.jpg"
+              src="/image (1).jpg"
               alt="Owner"
               style={{
-                width: "100%",
-                height: "100%",
+                position: "absolute", // Absolute positioning within the parent container
+                bottom: "0", // Align to the bottom
+                right: "0", // Align to the left
+                zIndex: 2,
+                width: "90%", // Image size
+                height: "90%", // Image size
                 objectFit: "cover",
+                borderRadius: "16px",
               }}
             />
-          </Paper>
+          </Box>
         </Grid>
+
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
             Meet Our Owner
           </Typography>
           <Typography variant="body1" sx={{ mb: 2, color: "text.secondary" }}>
-            Our owner is passionate about creating experiences that inspire and 
-            engage. With a background in business and creativity, they have 
-            built a vision that connects people through unique and unforgettable 
+            Our owner is passionate about creating experiences that inspire and
+            engage. With a background in business and creativity, they have
+            built a vision that connects people through unique and unforgettable
             moments.
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: "medium", mb: 1 }}>
@@ -69,9 +87,10 @@ const Owners = () => {
             Our Vision
           </Typography>
           <Typography variant="body1" sx={{ mb: 2, color: "text.secondary" }}>
-            At the core of our mission is the desire to empower others through 
-            creativity and collaboration. Our vision is to bring people 
-            together, foster innovation, and make a positive impact on the world.
+            At the core of our mission is the desire to empower others through
+            creativity and collaboration. Our vision is to bring people
+            together, foster innovation, and make a positive impact on the
+            world.
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: "medium", mb: 1 }}>
             What Drives Us:
@@ -95,27 +114,46 @@ const Owners = () => {
           </ul>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper
-            elevation={3}
+          <Box
             sx={{
+              position: "relative",
+              //backgroundColor: "black",
               borderRadius: "16px",
               overflow: "hidden",
-              position: "relative",
               width: "100%",
               height: "auto",
               aspectRatio: "4/3", // Ensures consistent aspect ratio
             }}
           >
+            {/* Color box behind the image */}
+            <Box
+              sx={{
+                position: "absolute",
+                width: "90%", // Slightly larger than the image
+                height: "90%", // Slightly larger than the image
+                backgroundColor: "#e129fa", // Replace with your desired color
+                zIndex: 1,
+                right: "0",
+                bottom: "0",
+                borderRadius: "16px", // Matches the image border radius
+              }}
+            ></Box>
+            {/* Image on bottom-left corner */}
             <img
-              src="/image2.jpg"
-              alt="Vision"
+              src="/image (2).jpg"
+              alt="Owner"
               style={{
-                width: "100%",
-                height: "100%",
+                position: "absolute", // Absolute positioning within the parent container
+                top: "0", // Align to the bottom
+                left: "0", // Align to the left
+                zIndex: 2,
+                width: "90%", // Image size
+                height: "90%", // Image size
                 objectFit: "cover",
+                borderRadius: "16px",
               }}
             />
-          </Paper>
+          </Box>
         </Grid>
       </Grid>
     </Box>

@@ -79,8 +79,8 @@ export default function Features() {
   return (
     <div>
       <Heading
-        heading=""
-        subheading=""
+        heading="FEATURES"
+        subheading="WHAT DO WE OFFER?"
       />
       <section id="services" style={{ padding: "6rem 0" }}>
         <Box maxWidth="lg" mx="auto" px={3} textAlign="center">
