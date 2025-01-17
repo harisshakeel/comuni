@@ -1,7 +1,7 @@
 import Hero from "../components/Home/Hero";
 import Attributes from "../components/Home/Attributes";
 import Memories  from "../components/Home/Memories";
-import Info  from "../components/Home/Info";
+import Comingsoon  from "../components/Comingsoon";
 
 
 
@@ -11,7 +11,7 @@ export default function HomePage() {
     <div>
       <Hero />
       <Memories/>
-      <Info/>
+      <Comingsoon/>
     </div>
   );
 }

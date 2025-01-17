@@ -14,7 +14,7 @@ const Hero = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "90vh",
+        minHeight: "100vh",
         backgroundImage: `url(${heroImage.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -79,33 +79,39 @@ const Hero = () => {
           </Typography>
         </motion.div>
 
-        <Button
-          variant="contained"
-          size="large"
-          sx={{
-            mt: 3,
-            px: 4,
-            py: 1.5,
-            bgcolor: "#e129fa",
-            color: "white",
-            borderRadius: "50px",
-            fontSize: "1.1rem",
-            fontWeight: "bold",
-            textTransform: "uppercase",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-            transition: "transform 0.3s ease, background-color 0.3s ease",
-            "&:hover": {
-              bgcolor: "#c01ae0",
-              transform: "scale(1.05)",
-            },
-            "&:active": {
-              transform: "scale(0.98)",
-            },
-          }}
-          href="#about"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }} // Start scaled down and transparent
+          animate={{ opacity: 1, scale: 1 }} // Fade in and scale up to normal size
+          transition={{ duration: 1.5, ease: "easeOut" }} // Transition duration
         >
-          LEARN MORE!
-        </Button>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              mt: 3,
+              px: 4,
+              py: 1.5,
+              bgcolor: "#e129fa",
+              color: "white",
+              borderRadius: "50px",
+              fontSize: "1.1rem",
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+              transition: "transform 0.3s ease, background-color 0.3s ease",
+              "&:hover": {
+                bgcolor: "#c01ae0",
+                transform: "scale(1.05)",
+              },
+              "&:active": {
+                transform: "scale(0.98)",
+              },
+            }}
+            href="#about"
+          >
+            LEARN MORE!
+          </Button>
+        </motion.div>
       </Container>
       {/* Wavy bottom */}
       {/* <Box

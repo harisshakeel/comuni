@@ -21,6 +21,9 @@ import {
 } from "lucide-react";
 
 import Heading from "../../components/Heading";
+import Comingsoon  from "../../components/Comingsoon";
+
+
 export default function Features() {
   const services = [
     {
@@ -83,70 +86,64 @@ export default function Features() {
         subheading="WHAT DO WE OFFER?"
       />
       <section id="services" style={{ padding: "6rem 0" }}>
-        <Box maxWidth="lg" mx="auto" px={3} textAlign="center">
-          <Box mb={6}>
-            <Typography
-              variant="h4"
-              component="h2"
-              fontWeight="bold"
-              gutterBottom
-            >
-              Our{" "}
-              <span
-                style={{
-                  background: "linear-gradient(to right, #800080, #FF1493)",
-                  WebkitBackgroundClip: "text",
-                  color: "transparent",
-                }}
-              >
-                Services
-              </span>
-            </Typography>
-            <Typography variant="body1" color="textSecondary">
-              Discover all the ways Communi helps you connect, explore, and
-              create memorable experiences.
-            </Typography>
-          </Box>
+        <Box maxWidth="lg" mx="auto" px={3}>
           <Grid container spacing={4}>
-            {services.map((service, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card
-                  sx={{
-                    backgroundColor: "rgba(255, 255, 255, 0.8)",
-                    backdropFilter: "blur(5px)",
-                    "&:hover": {
-                      boxShadow: 6,
-                    },
-                    transition: "box-shadow 0.3s",
-                  }}
-                >
-                  <CardHeader
-                    avatar={
-                      <Avatar
-                        sx={{
-                          background:
-                            "linear-gradient(to right, #800080, #FF1493)",
-                          p: 1.5,
-                        }}
-                      >
-                        <service.icon size={24} color="white" />
-                      </Avatar>
-                    }
-                  />
-                  <CardContent>
-                    <Typography variant="h6" component="h3" gutterBottom>
-                      {service.title}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      {service.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
+            {/* 35% for Heading and Description */}
+            <Grid item xs={12} md={4}>
+              <Box textAlign="left">
+                <Typography variant="body1" color="textSecondary">
+                  Discover all the ways Communi helps you connect, explore, and
+                  create memorable experiences.
+                </Typography>
+              </Box>
+            </Grid>
+
+            {/* 65% for Services */}
+            <Grid item xs={12} md={8}>
+              <Grid container spacing={4}>
+                {services.map((service, index) => (
+                  <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Card
+                      sx={{
+                        backgroundColor: "rgba(255, 255, 255, 0.8)",
+                        backdropFilter: "blur(5px)",
+                        "&:hover": {
+                          boxShadow: 6,
+                        },
+                        transition: "box-shadow 0.3s",
+                      }}
+                    >
+                      <CardHeader
+                        avatar={
+                          <Avatar
+                            sx={{
+                              background:
+                                "linear-gradient(to right, #800080, #FF1493)",
+                              p: 1.5,
+                            }}
+                          >
+                            <service.icon size={24} color="white" />
+                          </Avatar>
+                        }
+                      />
+                      <CardContent>
+                        <Typography variant="h6" component="h3" gutterBottom>
+                          {service.title}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                          {service.description}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                ))}
               </Grid>
-            ))}
+            </Grid>
           </Grid>
         </Box>
       </section>
+      <Comingsoon/>
+
     </div>
   );
 }

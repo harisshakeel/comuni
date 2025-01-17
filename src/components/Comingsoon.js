@@ -3,13 +3,13 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-const Info = () => {
+const Comingsoon = () => {
   return (
     <Box
       sx={{
         position: "relative",
         width: "100%",
-        height: "80vh", // Full viewport height
+        height: "100vh", // Full viewport height
         backgroundImage: "url('/info.webp')", // Background image
         backgroundSize: "cover", // Ensures the image covers the entire container
         backgroundPosition: "center", // Centers the image
@@ -31,14 +31,14 @@ const Info = () => {
         }}
       >
         <Typography variant="h3" sx={{ fontWeight: 700 }}>
-          Welcome to the Info Page
+          COMING SOON PAGE
         </Typography>
         <Typography variant="h6" sx={{ marginTop: 2 }}>
-          This page has a fixed background image.
+          APP IS IN DEVELOPMENT,STAY TUNED
         </Typography>
       </Box>
     </Box>
   );
 };
 
-export default Info;
+export default Comingsoon;

@@ -1,16 +1,15 @@
 import React from "react";
-import { Box, Typography, Grid, Paper } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 
 const Owners = () => {
   return (
     <Box sx={{ p: 4, backgroundColor: "#f5f5f5" }}>
-      {/* First Row: Image on Left, Text on Right */}
+      {/* First Owner: Shozaib Haroon */}
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Box
             sx={{
               position: "relative",
-              //backgroundColor: "black",
               borderRadius: "16px",
               overflow: "hidden",
               width: "100%",
@@ -18,28 +17,26 @@ const Owners = () => {
               aspectRatio: "4/3", // Ensures consistent aspect ratio
             }}
           >
-            {/* Color box behind the image */}
             <Box
               sx={{
                 position: "absolute",
-                width: "90%", // Slightly larger than the image
-                height: "90%", // Slightly larger than the image
-                backgroundColor: "#e129fa", // Replace with your desired color
+                width: "90%",
+                height: "90%",
+                backgroundColor: "#e129fa",
                 zIndex: 1,
-                borderRadius: "16px", // Matches the image border radius
+                borderRadius: "16px",
               }}
             ></Box>
-            {/* Image on bottom-left corner */}
             <img
               src="/image (1).jpg"
-              alt="Owner"
+              alt="Shozaib Haroon"
               style={{
-                position: "absolute", // Absolute positioning within the parent container
-                bottom: "0", // Align to the bottom
-                right: "0", // Align to the left
+                position: "absolute",
+                bottom: "0",
+                right: "0",
                 zIndex: 2,
-                width: "90%", // Image size
-                height: "90%", // Image size
+                width: "90%",
+                height: "90%",
                 objectFit: "cover",
                 borderRadius: "16px",
               }}
@@ -49,13 +46,12 @@ const Owners = () => {
 
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
-            Meet Our Owner
+            Meet Shozaib Haroon
           </Typography>
           <Typography variant="body1" sx={{ mb: 2, color: "text.secondary" }}>
-            Our owner is passionate about creating experiences that inspire and
-            engage. With a background in business and creativity, they have
-            built a vision that connects people through unique and unforgettable
-            moments.
+            Shozaib is a visionary leader with a passion for innovation and
+            collaboration. His experience and expertise have been instrumental
+            in shaping the values and mission of our organization.
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: "medium", mb: 1 }}>
             Key Highlights:
@@ -63,52 +59,51 @@ const Owners = () => {
           <ul>
             <li>
               <Typography variant="body2" color="text.secondary">
-                Over 10 years of industry experience
+                Over a decade of industry leadership
               </Typography>
             </li>
             <li>
               <Typography variant="body2" color="text.secondary">
-                Driven by innovation and customer-centric values
+                Known for fostering creativity and teamwork
               </Typography>
             </li>
             <li>
               <Typography variant="body2" color="text.secondary">
-                Committed to sustainable practices
+                Advocate for innovative and sustainable practices
               </Typography>
             </li>
           </ul>
         </Grid>
       </Grid>
 
-      {/* Second Row: Image on Right, Text on Left */}
+      {/* Second Owner: Thomas Vessete */}
       <Grid container spacing={4} alignItems="center" sx={{ mt: 6 }}>
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
-            Our Vision
+            Meet Thomas Vessete
           </Typography>
           <Typography variant="body1" sx={{ mb: 2, color: "text.secondary" }}>
-            At the core of our mission is the desire to empower others through
-            creativity and collaboration. Our vision is to bring people
-            together, foster innovation, and make a positive impact on the
-            world.
+            Thomas is a dynamic and dedicated professional committed to
+            excellence. His ability to connect with people and his strategic
+            vision have driven the success of numerous projects.
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: "medium", mb: 1 }}>
-            What Drives Us:
+            Key Highlights:
           </Typography>
           <ul>
             <li>
               <Typography variant="body2" color="text.secondary">
-                Innovation and creativity in every project
+                Extensive expertise in project management
               </Typography>
             </li>
             <li>
               <Typography variant="body2" color="text.secondary">
-                Building meaningful relationships with clients
+                Passionate about building meaningful client relationships
               </Typography>
             </li>
             <li>
               <Typography variant="body2" color="text.secondary">
-                A commitment to excellence and integrity
+                Strong advocate for innovation and integrity
               </Typography>
             </li>
           </ul>
@@ -117,7 +112,6 @@ const Owners = () => {
           <Box
             sx={{
               position: "relative",
-              //backgroundColor: "black",
               borderRadius: "16px",
               overflow: "hidden",
               width: "100%",
@@ -125,30 +119,28 @@ const Owners = () => {
               aspectRatio: "4/3", // Ensures consistent aspect ratio
             }}
           >
-            {/* Color box behind the image */}
             <Box
               sx={{
                 position: "absolute",
-                width: "90%", // Slightly larger than the image
-                height: "90%", // Slightly larger than the image
-                backgroundColor: "#e129fa", // Replace with your desired color
+                width: "90%",
+                height: "90%",
+                backgroundColor: "#e129fa",
                 zIndex: 1,
                 right: "0",
                 bottom: "0",
-                borderRadius: "16px", // Matches the image border radius
+                borderRadius: "16px",
               }}
             ></Box>
-            {/* Image on bottom-left corner */}
             <img
               src="/image (2).jpg"
-              alt="Owner"
+              alt="Thomas Vessete"
               style={{
-                position: "absolute", // Absolute positioning within the parent container
-                top: "0", // Align to the bottom
-                left: "0", // Align to the left
+                position: "absolute",
+                top: "0",
+                left: "0",
                 zIndex: 2,
-                width: "90%", // Image size
-                height: "90%", // Image size
+                width: "90%",
+                height: "90%",
                 objectFit: "cover",
                 borderRadius: "16px",
               }}

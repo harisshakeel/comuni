@@ -36,9 +36,9 @@ const Heading = ({ heading, subheading }) => {
           position: "absolute",
           top: 0,
           left: animateBox ? 0 : "-40%",
-          width: "40%",
+          width: "35%",
           height: "100%",
-          backgroundColor: "#00c6b8",
+          backgroundColor: "#450159",
           zIndex: 1,
           transition: "left 1.5s ease-in-out", // Slower transition for the box
         }}
@@ -51,7 +51,7 @@ const Heading = ({ heading, subheading }) => {
           left: "20%",
           transform: "translateY(-50%)",
           zIndex: 2,
-          width: "40%",
+          width: "35%",
           transition: "top 1.5s ease-in-out", // Slower transition for the text
         }}
       >

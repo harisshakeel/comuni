@@ -85,7 +85,7 @@ const Navbar = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.8)" : "transparent",
+          backgroundColor: isScrolled ? "rgba(35, 1, 44, 0.8)" : "transparent",
           transition: "background-color 0.3s ease",
           boxShadow: isScrolled ? 3 : 0,
           paddingLeft: { xs: 2, sm: 10 }, // Add left padding (adjust as needed)
