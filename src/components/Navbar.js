@@ -88,8 +88,8 @@ const Navbar = () => {
           backgroundColor: isScrolled ? "rgba(35, 1, 44, 0.8)" : "transparent",
           transition: "background-color 0.3s ease",
           boxShadow: isScrolled ? 3 : 0,
-          paddingLeft: { xs: 2, sm: 10 }, // Add left padding (adjust as needed)
-          paddingRight: { xs: 2, sm: 10 }, // Add right padding (adjust as needed)
+          paddingLeft: { xs: 0, sm: 0, md: 10, lg: 15, xl: 20 }, // Adjusts left padding for each breakpoint
+          paddingRight: { xs: 7, sm: 8, md: 10, lg: 15, xl: 20 }, // Adjusts right padding for each breakpoint
         }}
       >
         <Toolbar>

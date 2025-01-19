@@ -5,7 +5,7 @@ import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ py: 6, backgroundColor: '#e1bee7' }}>
+    <Box component="footer" sx={{ py: 6, backgroundColor: 'rgb(236, 200, 244)' }}>
       <Grid container spacing={4} sx={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Column 1: Contact Information */}
         <Grid item xs={12} sm={6} md={3}>
@@ -59,38 +59,11 @@ const Footer = () => {
           <Typography variant="body2" color="textSecondary">
             Subscribe to our newsletter for the latest updates.
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <input
-              type="email"
-              placeholder="Your email"
-              style={{
-                padding: '10px',
-                marginTop: '8px',
-                width: '100%',
-                borderRadius: '4px',
-                border: '1px solid #ccc',
-              }}
-            />
-            <button
-              type="submit"
-              style={{
-                marginTop: '8px',
-                padding: '10px 20px',
-                backgroundColor: '#6a1b9a',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
-              Subscribe
-            </button>
-          </Box>
         </Grid>
       </Grid>
 
       {/* Footer Bottom */}
-      <Box sx={{ py: 2, textAlign: 'center', backgroundColor: '#d1c4e9' }}>
+      <Box sx={{ py: 2,my: 3, textAlign: 'center', backgroundColor: '#d1c4e9' }}>
         <Typography variant="body2" color="textSecondary">
           © {new Date().getFullYear()} Comuni. All rights reserved.
         </Typography>

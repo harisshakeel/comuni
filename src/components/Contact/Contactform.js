@@ -35,16 +35,7 @@ export default function Contactform() {
                   fontWeight="bold"
                   gutterBottom
                 >
-                  Contact{" "}
-                  <span
-                    style={{
-                      background: "linear-gradient(to right, #800080, #FF1493)",
-                      WebkitBackgroundClip: "text",
-                      color: "transparent",
-                    }}
-                  >
-                    Us
-                  </span>
+                  Reach us out!
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
                   We’d love to hear from you! Whether you have a question, want
@@ -55,7 +46,17 @@ export default function Contactform() {
 
             {/* 65% for Contact Form */}
             <Grid item xs={12} md={8}>
-              <Paper sx={{ padding: 4, backgroundColor: "#f9f9f9" }}>
+              <Paper
+                sx={{
+                  padding: 4,
+                  backgroundColor: "#fff",
+                  boxShadow: 3,
+                  borderRadius: 2,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                }}
+              >
                 <form onSubmit={handleSubmit}>
                   <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
@@ -67,6 +68,13 @@ export default function Contactform() {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        sx={{
+                          borderRadius: 2,
+                          border: "2px solid #800080", // Adding website gradient color
+                          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "#FF1493", // Hover color for the border
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -78,6 +86,13 @@ export default function Contactform() {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        sx={{
+                          borderRadius: 2,
+                          border: "2px solid #800080", // Adding website gradient color
+                          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "#FF1493", // Hover color for the border
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -91,6 +106,13 @@ export default function Contactform() {
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        sx={{
+                          borderRadius: 2,
+                          border: "2px solid #800080", // Adding website gradient color
+                          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "#FF1493", // Hover color for the border
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -98,10 +120,12 @@ export default function Contactform() {
                         type="submit"
                         variant="contained"
                         sx={{
-                          backgroundColor: "linear-gradient(to right, #800080, #FF1493)",
+                          backgroundColor: "#ca00f3", // Gradient button background
                           "&:hover": {
-                            backgroundColor: "#FF1493",
+                            backgroundColor: "#FF1493", // Hover effect for button
                           },
+                          borderRadius: 2,
+                          padding: "10px 20px",
                         }}
                         fullWidth
                       >

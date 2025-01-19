@@ -1,2 +1,16 @@
 heading inspired website:
 https://twentythreelayers.com/
+
+https://www.andacademy.com/resources/blog/graphic-design/font-for-website/#:~:text=These%20can%20be%20categorized%20as%3A%201%20Primary%20font%E2%80%94,for%20specific%20website%20elements%20like%20menus%20or%20navigation.
+
+https://oxygeneventworks.com/
+
+
+#ea29fa
+ #ff0094
+  #ff0151
+   #ca00f3
+
+
+
+rgb(229, 139, 247)

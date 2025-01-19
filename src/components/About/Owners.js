@@ -3,7 +3,7 @@ import { Box, Typography, Grid } from "@mui/material";
 
 const Owners = () => {
   return (
-    <Box sx={{ p: 4, backgroundColor: "#f5f5f5" }}>
+    <Box sx={{ p: 12, backgroundColor: "#f5f5f5" }}>
       {/* First Owner: Shozaib Haroon */}
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>

@@ -3,7 +3,7 @@ import { Box, Typography, Grid } from "@mui/material";
 
 const Description = () => {
   return (
-    <Box sx={{ p: 4, backgroundColor: "#f5f5f5" }}>
+    <Box sx={{ p:12, backgroundColor: "#f5f5f5" }}>
       <Grid container spacing={4} alignItems="center">
         {/* App Overview Section */}
         <Grid item xs={12} md={4} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>

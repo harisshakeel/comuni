@@ -21,8 +21,8 @@ import {
 } from "lucide-react";
 
 import Heading from "../../components/Heading";
-import Comingsoon  from "../../components/Comingsoon";
-
+import Comingsoon from "../../components/Comingsoon";
+import "@fontsource/boogaloo"; // Import Boogaloo font
 
 export default function Features() {
   const services = [
@@ -81,13 +81,10 @@ export default function Features() {
 
   return (
     <div>
-      <Heading
-        heading="FEATURES"
-        subheading="WHAT DO WE OFFER?"
-      />
+      <Heading heading="FEATURES" subheading="WHAT DO WE OFFER?" />
       <section id="services" style={{ padding: "6rem 0" }}>
-        <Box maxWidth="lg" mx="auto" px={3}>
-          <Grid container spacing={4}>
+        <Box maxWidth="lg" mx="auto" p={4}>
+          <Grid container spacing={8}>
             {/* 35% for Heading and Description */}
             <Grid item xs={12} md={4}>
               <Box textAlign="left">
@@ -105,8 +102,9 @@ export default function Features() {
                   <Grid item xs={12} sm={6} md={4} key={index}>
                     <Card
                       sx={{
-                        backgroundColor: "rgba(255, 255, 255, 0.8)",
-                        backdropFilter: "blur(5px)",
+                        background:
+                          "#ea29fa", // Gradient background for the card
+                        color: "white", // Text color inside the card
                         "&:hover": {
                           boxShadow: 6,
                         },
@@ -117,20 +115,27 @@ export default function Features() {
                         avatar={
                           <Avatar
                             sx={{
-                              background:
-                                "linear-gradient(to right, #800080, #FF1493)",
+                              backgroundColor: "white", // White background for the avatar
                               p: 1.5,
                             }}
                           >
-                            <service.icon size={24} color="white" />
+                            <service.icon size={24} color="#800080" /> {/* Dark icon to contrast with the white background */}
                           </Avatar>
                         }
                       />
                       <CardContent>
-                        <Typography variant="h6" component="h3" gutterBottom>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          gutterBottom
+                          sx={{
+                            fontFamily: "'Boogaloo', sans-serif", // Apply Boogaloo font
+                            fontWeight: "bold", // Make the heading bold
+                          }}
+                        >
                           {service.title}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary">
+                        <Typography variant="body2" color="white">
                           {service.description}
                         </Typography>
                       </CardContent>
@@ -142,8 +147,7 @@ export default function Features() {
           </Grid>
         </Box>
       </section>
-      <Comingsoon/>
-
+      <Comingsoon />
     </div>
   );
 }

@@ -38,6 +38,7 @@ const Hero = () => {
         sx={{
           position: "relative",
           zIndex: 2, // Ensure the text is above the overlay
+          padding: { xs: 2, md: 4, lg: 6 }, // Responsive padding for the container
         }}
       >
         <motion.div
@@ -53,6 +54,7 @@ const Hero = () => {
               fontFamily: "Spicy Rice, cursive",
               fontWeight: 400,
               textTransform: "uppercase",
+              fontSize: { xs: "2.2rem", md: "3rem", lg: "4rem" }, // Responsive font size for heading
             }}
           >
             Welcome to <span style={{ color: "#e129fa" }}>Comuni</span>
@@ -70,6 +72,7 @@ const Hero = () => {
             sx={{
               fontFamily: "Spicy Rice, cursive",
               fontWeight: 400,
+              fontSize: { xs: "0.8rem", md: "1.1rem", lg: "1.2rem" }, // Responsive font size for paragraph
             }}
           >
             Discover the best way to{" "}
@@ -89,12 +92,12 @@ const Hero = () => {
             size="large"
             sx={{
               mt: 3,
-              px: 4,
-              py: 1.5,
+              px: { xs: 3, md: 4, lg: 6 }, // Responsive horizontal padding
+              py: { xs: 1, md: 1.5, lg: 2 }, // Responsive vertical padding
               bgcolor: "#e129fa",
               color: "white",
               borderRadius: "50px",
-              fontSize: "1.1rem",
+              fontSize: { xs: "0.9rem", md: "1rem", lg: "1.1rem" }, // Responsive font size for the button
               fontWeight: "bold",
               textTransform: "uppercase",
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
@@ -113,6 +116,7 @@ const Hero = () => {
           </Button>
         </motion.div>
       </Container>
+
       {/* Wavy bottom */}
       {/* <Box
         sx={{

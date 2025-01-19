@@ -3,6 +3,14 @@
 import { CssBaseline, Box } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import "@fontsource/nova-round"; // Ensure the font is imported
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "'Nova Round', sans-serif", // Apply globally
+  },
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -30,10 +38,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <CssBaseline />
-        <Navbar />
-        <Box component="main">{children}</Box>
-        <Footer />
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Navbar />
+          <Box component="main">{children}</Box>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

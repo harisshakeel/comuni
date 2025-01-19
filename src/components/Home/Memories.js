@@ -34,10 +34,11 @@ const Memories = () => {
   return (
     <Box
       sx={{
-        padding: "4rem 8rem", // Reduced horizontal padding
+        paddingY: ["5rem", "5rem", "4rem 8rem"], // Responsive padding: [mobile, tablet, desktop]
+        paddingX: ["0", "1rem", "4rem 8rem"], // Responsive padding: [mobile, tablet, desktop]
+
         backgroundColor: "#fff",
-        overflow: "visible", // Allow content to overflow
-        //backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.98)), url('/bg.png')`, // Add gradient overlay with 10% opacity
+        overflow: "visible",
         backgroundSize: "350%", // Make the background image larger than its container
         backgroundPosition: "center", // Center the background image
         backgroundRepeat: "no-repeat", // Avoid repeating the image
@@ -49,14 +50,15 @@ const Memories = () => {
         sx={{
           fontWeight: "bold",
           textAlign: "center",
-          marginBottom: "5rem", // Space between the heading and the grid
-          marginTop: "2.5rem", // Add vertical spacing above the heading
-          paddingBottom: "1rem", // Add vertical padding below the heading
+          marginBottom: ["2rem", "4rem", "5rem"], // Responsive bottom margin
+          marginTop: ["1rem", "2rem", "2.5rem"], // Responsive top margin
+          paddingBottom: "1rem", // Padding below the heading
           fontFamily: "Spicy Rice, cursive",
           color: "#333", // Adjust color to suit your theme
+          fontSize: ["1.2rem", "1.8rem", "2.5rem"], // Responsive font sizes
         }}
       >
-        Not just an app, your core memories too.
+        Not just an app, your core memories wall.
       </Typography>
 
       <Grid
