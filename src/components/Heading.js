@@ -59,7 +59,13 @@ const Heading = ({ heading, subheading }) => {
           variant="h4"
           sx={{
             fontWeight: "bold",
-            fontSize: "6rem",
+            fontSize: {
+              xs: "2rem", // Extra small screens
+              sm: "3rem", // Small screens
+              md: "4rem", // Medium screens
+              lg: "5rem", // Large screens
+              xl: "6rem", // Extra large screens
+            },
             color: "#fff",
             textAlign: "center",
             margin: 0,
@@ -72,7 +78,13 @@ const Heading = ({ heading, subheading }) => {
             variant="h6"
             sx={{
               fontWeight: "bold",
-              fontSize: "2.5rem",
+              fontSize: {
+                xs: "1rem", // Extra small screens
+                sm: "1.5rem", // Small screens
+                md: "2rem", // Medium screens
+                lg: "2.5rem", // Large screens
+                xl: "3rem", // Extra large screens
+              },
               marginTop: "8px",
               color: "#fff",
               textAlign: "center",

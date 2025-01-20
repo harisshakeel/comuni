@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
-import heroImage from "../../../public/hero.jpeg"; // Import the image
+import heroImage from "../../../public/hero.jpg"; // Import the image
 import "@fontsource/spicy-rice"; // Import the Spicy Rice font
 import { motion } from "framer-motion"; // Import framer-motion
 
