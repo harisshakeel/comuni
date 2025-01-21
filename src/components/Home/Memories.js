@@ -21,8 +21,6 @@ const captions = [
   "Seaside breeze",
   "Timeless bond",
   "Wanderlust calls",
-  "Sunset bliss",
-  "New beginnings",
 ];
 
 const Memories = () => {
@@ -34,14 +32,13 @@ const Memories = () => {
   return (
     <Box
       sx={{
-        paddingY: ["5rem", "5rem", "4rem 8rem"], // Responsive padding: [mobile, tablet, desktop]
-        paddingX: ["0", "1rem", "4rem 8rem"], // Responsive padding: [mobile, tablet, desktop]
-
+        paddingY: ["3rem", "4rem", "5rem"], // Keep the same responsive padding for top and bottom
+        paddingX: ["0.1rem", "1rem", "4rem"], // Adjusted side margins: [mobile, tablet, desktop]
         backgroundColor: "#fff",
         overflow: "visible",
-        backgroundSize: "350%", // Make the background image larger than its container
-        backgroundPosition: "center", // Center the background image
-        backgroundRepeat: "no-repeat", // Avoid repeating the image
+        backgroundSize: "350%",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Heading for Core Memories */}
@@ -50,12 +47,12 @@ const Memories = () => {
         sx={{
           fontWeight: "bold",
           textAlign: "center",
-          marginBottom: ["2rem", "4rem", "5rem"], // Responsive bottom margin
-          marginTop: ["1rem", "2rem", "2.5rem"], // Responsive top margin
+          marginBottom: ["0rem", "1rem", "4rem"], // Responsive bottom margin
+          marginTop: ["1rem", "1rem", "1rem"], // Responsive top margin
           paddingBottom: "1rem", // Padding below the heading
           fontFamily: "Spicy Rice, cursive",
           color: "#333", // Adjust color to suit your theme
-          fontSize: ["1.2rem", "1.8rem", "2.5rem"], // Responsive font sizes
+          fontSize: ["1.2rem", "1.9rem", "2.5rem"], // Responsive font sizes
         }}
       >
         Not just an app, your core memories wall.
@@ -63,29 +60,25 @@ const Memories = () => {
 
       <Grid
         container
-        spacing={0} // Set spacing to zero to remove default spacing between grid items
         justifyContent="center"
         sx={{
           position: "relative",
           height: "auto",
+          backgroundColor: "#fff",
         }}
       >
         {captions.map((caption, index) => (
           <Grid
             key={index}
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3}
+            item={3}
             sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               position: "relative",
               transform: `rotate(${getRandomRotation()})`,
-              marginX: "-1rem", // Add negative margin to create the overlapping effect
-              marginY: "2rem", // Add negative margin to create the overlapping effect
+              marginX: "0.5rem", // Add some horizontal spacing
+              marginY: "2rem", // Add some vertical spacing
             }}
           >
             <Polaroid imgUrl={`/image (${index + 1}).jpg`} caption={caption} />

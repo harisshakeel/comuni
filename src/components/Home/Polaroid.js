@@ -7,11 +7,19 @@ const Polaroid = ({ imgUrl, caption }) => {
   return (
     <Box
       sx={{
-        width: "16rem", // Converted from 250px
+        width: {
+          xs: "5.6rem", // Small size for mobile
+          sm: "11rem", // Medium size for tablets
+          md: "17rem", // Large size for desktops
+        },
         backgroundColor: "#fff",
         border: "0.06rem solid #ddd", // Converted from 1px
         boxShadow: "0 0.25rem 0.375rem rgba(0, 0, 0, 0.2)", // Converted from px
-        padding: "0.5rem", // Converted from 8px
+        padding: {
+          xs: "0.22rem", // Small size for mobile
+          sm: "0.35rem", // Medium size for tablets
+          md: "0.5rem", // Large size for desktops
+        }, // Converted from 8px
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -35,8 +43,12 @@ const Polaroid = ({ imgUrl, caption }) => {
         <Typography
           variant="body2"
           sx={{
-            marginTop: "0.375rem", // Converted from 6px
-            fontSize: "1.5rem",
+            marginTop: { md: "0.375rem", sm: "0.34rem", xs: "0.2rem" }, // Converted from 6px
+            fontSize: {
+              xs: "0.5rem", // Smaller font for mobile
+              sm: "1.1rem", // Medium font for tablets
+              md: "1.5rem", // Larger font for desktops
+            },
             fontFamily: "'Waterfall', sans-serif", // Applying the imported font
             fontWeight: 600, // Making it a bit bolder
           }}

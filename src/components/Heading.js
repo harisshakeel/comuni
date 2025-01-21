@@ -26,7 +26,11 @@ const Heading = ({ heading, subheading }) => {
         backgroundColor: "#e129fa",
         padding: "0",
         margin: 0,
-        height: "90vh",
+        height: {
+          xs: "70vh", // Extra small screens
+          sm: "90vh", // Small screens
+          md: "90vh", // Medium screens
+        },
         overflow: "hidden",
       }}
     >
@@ -60,11 +64,9 @@ const Heading = ({ heading, subheading }) => {
           sx={{
             fontWeight: "bold",
             fontSize: {
-              xs: "2rem", // Extra small screens
-              sm: "3rem", // Small screens
-              md: "4rem", // Medium screens
-              lg: "5rem", // Large screens
-              xl: "6rem", // Extra large screens
+              xs: "3rem", // Extra small screens
+              sm: "4.5rem", // Small screens
+              md: "6rem", // Medium screens
             },
             color: "#fff",
             textAlign: "center",
@@ -80,10 +82,8 @@ const Heading = ({ heading, subheading }) => {
               fontWeight: "bold",
               fontSize: {
                 xs: "1rem", // Extra small screens
-                sm: "1.5rem", // Small screens
-                md: "2rem", // Medium screens
-                lg: "2.5rem", // Large screens
-                xl: "3rem", // Extra large screens
+                sm: "2rem", // Small screens
+                md: "3rem", // Medium screens
               },
               marginTop: "8px",
               color: "#fff",
