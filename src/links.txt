@@ -12,5 +12,6 @@ https://oxygeneventworks.com/
    #ca00f3
 
 
+rgb(66, 15, 77)
 
-rgb(229, 139, 247)
+rgb(59, 12, 68)

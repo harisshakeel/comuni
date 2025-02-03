@@ -22,7 +22,7 @@ const Owners = () => {
                 position: "absolute",
                 width: "90%",
                 height: "90%",
-                backgroundColor: "#e129fa",
+                backgroundColor: "#450159",
                 zIndex: 1,
                 borderRadius: "16px",
               }}
@@ -124,7 +124,7 @@ const Owners = () => {
                 position: "absolute",
                 width: "90%",
                 height: "90%",
-                backgroundColor: "#e129fa",
+                backgroundColor: "#450159",
                 zIndex: 1,
                 right: "0",
                 bottom: "0",

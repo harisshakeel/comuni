@@ -99,15 +99,19 @@ export default function Features() {
             <Grid item xs={12} md={8}>
               <Grid container spacing={4}>
                 {services.map((service, index) => (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Grid item xs={12} sm={6} md={6} key={index}>
+                    {" "}
                     <Card
                       sx={{
-                        background:
-                          "#ea29fa", // Gradient background for the card
-                        color: "white", // Text color inside the card
-                        "&:hover": {
-                          boxShadow: 6,
-                        },
+                        background: "#ea29fa",
+                        color: "white",
+                        minHeight: "20rem", // Fixed height
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "center", // Center content
+                        padding: "1rem",
+                        "&:hover": { boxShadow: 6 },
                         transition: "box-shadow 0.3s",
                       }}
                     >
@@ -115,27 +119,38 @@ export default function Features() {
                         avatar={
                           <Avatar
                             sx={{
-                              backgroundColor: "white", // White background for the avatar
-                              p: 1.5,
+                              backgroundColor: "white",
+                              width: 50, // Adjust avatar size
+                              height: 50,
+                              p: 1,
                             }}
                           >
-                            <service.icon size={24} color="#800080" /> {/* Dark icon to contrast with the white background */}
+                            <service.icon size={30} color="#800080" />{" "}
+                            {/* Slightly bigger icon */}
                           </Avatar>
                         }
                       />
-                      <CardContent>
+                      <CardContent sx={{ textAlign: "center", flexGrow: 1 }}>
                         <Typography
                           variant="h6"
                           component="h3"
                           gutterBottom
                           sx={{
-                            fontFamily: "'Boogaloo', sans-serif", // Apply Boogaloo font
-                            fontWeight: "bold", // Make the heading bold
+                            fontFamily: "'Boogaloo', sans-serif",
+                            fontWeight: "bold",
+                            fontSize: "1.5rem", // Slightly larger title
                           }}
                         >
                           {service.title}
                         </Typography>
-                        <Typography variant="body2" color="white">
+                        <Typography
+                          variant="body2"
+                          color="white"
+                          sx={{
+                            fontSize: "1rem",
+                            padding: "0.5rem 0",
+                          }}
+                        >
                           {service.description}
                         </Typography>
                       </CardContent>

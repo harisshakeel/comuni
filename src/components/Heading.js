@@ -8,92 +8,99 @@ const Heading = ({ heading, subheading }) => {
   const [animateText, setAnimateText] = useState(false);
 
   useEffect(() => {
-    // Trigger the box animation on component mount
-    setAnimateBox(true);
-
-    // Delay text animation to occur after the box transition
+    setAnimateBox(true); // Start box animation immediately
     const textAnimationTimeout = setTimeout(() => {
       setAnimateText(true);
-    }, 1700); // Adjust delay to match the slower box transition duration
+    }, 2700); // Start text animation after box transition
 
-    return () => clearTimeout(textAnimationTimeout); // Cleanup timeout
+    return () => clearTimeout(textAnimationTimeout);
   }, []);
 
   return (
     <Box
       sx={{
         position: "relative",
-        backgroundColor: "#e129fa",
-        padding: "0",
+        backgroundColor: "#f6a6ff",
+        padding: 0,
         margin: 0,
         height: {
-          xs: "70vh", // Extra small screens
-          sm: "90vh", // Small screens
-          md: "90vh", // Medium screens
+          xs: "70vh",
+          sm: "90vh",
+          md: "90vh",
         },
         overflow: "hidden",
+        display: "flex",
       }}
     >
-      {/* Box on the left with slide-in animation */}
+      {/* Box on the left with smooth sliding effect */}
       <Box
         sx={{
-          position: "absolute",
-          top: 0,
+          position: "relative",
           left: animateBox ? 0 : "-40%",
           width: "35%",
           height: "100%",
+          backgroundImage: "url('/headphone.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           backgroundColor: "#450159",
           zIndex: 1,
-          transition: "left 1.5s ease-in-out", // Slower transition for the box
+          transition: "left 3.5s ease-in-out",
+          willChange: "left", // Helps the browser optimize animation
         }}
       />
-      {/* Text container with delayed slide-down animation */}
+
+      {/* Right section with text that slides down */}
       <Box
         sx={{
-          position: "absolute",
-          top: animateText ? "50%" : "-30%", // Start above the viewport
-          left: "20%",
-          transform: "translateY(-50%)",
-          zIndex: 2,
-          width: "35%",
-          transition: "top 1.5s ease-in-out", // Slower transition for the text
+          flex: 1, // Takes remaining space
+          position: "relative",
         }}
       >
-        <Typography
-          variant="h4"
+        <Box
           sx={{
-            fontWeight: "bold",
-            fontSize: {
-              xs: "3rem", // Extra small screens
-              sm: "4.5rem", // Small screens
-              md: "6rem", // Medium screens
-            },
-            color: "#fff",
+            position: "absolute",
+            top: animateText ? "50%" : "-30%", // Start above viewport, slide down
+            left: "50%",
+            transform: "translate(-50%, -50%)",
             textAlign: "center",
-            margin: 0,
+            zIndex: 2,
+            transition: "top 1.5s ease-in-out, opacity 1s ease-in-out",
+            opacity: animateText ? 1 : 0, // Fade-in effect
           }}
         >
-          {heading}
-        </Typography>
-        {subheading && (
           <Typography
-            variant="h6"
+            variant="h4"
             sx={{
               fontWeight: "bold",
               fontSize: {
-                xs: "1rem", // Extra small screens
-                sm: "2rem", // Small screens
-                md: "3rem", // Medium screens
+                xs: "3rem",
+                sm: "4.5rem",
+                md: "6rem",
               },
-              marginTop: "8px",
-              color: "#fff",
-              textAlign: "center",
-              margin: 0,
+              color: "#000",
             }}
           >
-            {subheading}
+            {heading}
           </Typography>
-        )}
+          {subheading && (
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                fontSize: {
+                  xs: "1rem",
+                  sm: "2rem",
+                  md: "3rem",
+                },
+                marginTop: "8px",
+                color: "#000",
+              }}
+            >
+              {subheading}
+            </Typography>
+          )}
+        </Box>
       </Box>
     </Box>
   );
