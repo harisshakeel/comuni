@@ -9,7 +9,7 @@ import Comingsoon  from "../../components/Comingsoon";
 export default function About() {
   return (
     <div>
-      <Heading heading="ABOUT US" subheading="WHAT EXACTLY IS COMUNI?" />
+      <Heading heading="ABOUT US" subheading="What exactly is comuni?" />
       <Description/>
       <Owners />
       <Comingsoon/>

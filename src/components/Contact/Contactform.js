@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, Grid, TextField, Button, Paper } from "@mui/material";
+import { Box, Typography, Grid, TextField, Button } from "@mui/material";
 
 export default function Contactform() {
   const [formData, setFormData] = useState({
@@ -23,12 +23,19 @@ export default function Contactform() {
 
   return (
     <div>
-      <section id="contact" style={{ padding: "6rem 0" }}>
-        <Box maxWidth="lg" mx="auto" px={3}>
-          <Grid container spacing={4}>
-            {/* 35% for Heading and Description */}
-            <Grid item xs={12} md={4}>
-              <Box textAlign="center">
+      <section id="contact" style={{ padding: "6rem 0", height: "90vh" }}>
+        <Box maxWidth="lg" mx="auto" px={3} height="100%">
+          <Grid container spacing={4} height="100%">
+            {/* Heading and Description */}
+            <Grid
+              item
+              xs={12}
+              md={4}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "left" }}>
                 <Typography
                   variant="h4"
                   component="h2"
@@ -44,97 +51,65 @@ export default function Contactform() {
               </Box>
             </Grid>
 
-            {/* 65% for Contact Form */}
-            <Grid item xs={12} md={8}>
-              <Paper
-                sx={{
-                  padding: 4,
-                  backgroundColor: "#fff",
-                  boxShadow: 3,
-                  borderRadius: 2,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                <form onSubmit={handleSubmit}>
-                  <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
-                      <TextField
-                        label="Your Name"
-                        name="name"
-                        variant="outlined"
-                        fullWidth
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        sx={{
-                          borderRadius: 2,
-                          border: "2px solid #800080", // Adding website gradient color
-                          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "#FF1493", // Hover color for the border
-                          },
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <TextField
-                        label="Your Email"
-                        name="email"
-                        variant="outlined"
-                        fullWidth
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        sx={{
-                          borderRadius: 2,
-                          border: "2px solid #800080", // Adding website gradient color
-                          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "#FF1493", // Hover color for the border
-                          },
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        label="Your Message"
-                        name="message"
-                        variant="outlined"
-                        fullWidth
-                        multiline
-                        rows={4}
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        sx={{
-                          borderRadius: 2,
-                          border: "2px solid #800080", // Adding website gradient color
-                          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "#FF1493", // Hover color for the border
-                          },
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
+            {/* Contact Form */}
+            <Grid item xs={12} md={8} display="flex" alignItems="center">
+              <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+                <Grid container spacing={4}>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      label="Your Name"
+                      name="name"
+                      variant="standard"
+                      fullWidth
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      label="Your Email"
+                      name="email"
+                      variant="standard"
+                      fullWidth
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label="Your Message"
+                      name="message"
+                      variant="standard"
+                      fullWidth
+                      multiline
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box display="flex" justifyContent="flex-start">
                       <Button
                         type="submit"
                         variant="contained"
                         sx={{
-                          backgroundColor: "#ca00f3", // Gradient button background
+                          backgroundColor: "#ca00f3",
                           "&:hover": {
-                            backgroundColor: "#FF1493", // Hover effect for button
+                            backgroundColor: "#FF1493",
                           },
-                          borderRadius: 2,
-                          padding: "10px 20px",
+                          borderRadius: 4,
+                          padding: "9px 20px",
                         }}
-                        fullWidth
                       >
-                        Send Message
+                        Submit
                       </Button>
-                    </Grid>
+                    </Box>
                   </Grid>
-                </form>
-              </Paper>
+                </Grid>
+              </form>
             </Grid>
           </Grid>
         </Box>

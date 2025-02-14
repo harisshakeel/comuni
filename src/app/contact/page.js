@@ -7,7 +7,7 @@ import Contactform from "@/components/Contact/Contactform";
 export default function Contact() {
   return (
     <div>
-      <Heading heading="CONTACT" subheading="HOW TO REACH US OUT?" />
+      <Heading heading="CONTACT" subheading="How to reach us out?" />
       <Contactform/>
       <Comingsoon/>
     </div>

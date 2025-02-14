@@ -3,7 +3,9 @@
 import React from "react";
 import Polaroid from "./Polaroid";
 import { Box, Grid, Typography } from "@mui/material";
-import "@fontsource/spicy-rice"; // Import the Spicy Rice font
+//import "@fontsource/spicy-rice"; // Import the Spicy Rice font
+//import "@fontsource/roboto-slab"; // Import Roboto Slab
+import "@fontsource/waterfall"; // Import the Waterfall font
 
 const captions = [
   "A beautiful moment",
@@ -50,9 +52,9 @@ const Memories = () => {
           marginBottom: ["0rem", "1rem", "4rem"], // Responsive bottom margin
           marginTop: ["1rem", "1rem", "1rem"], // Responsive top margin
           paddingBottom: "1rem", // Padding below the heading
-          fontFamily: "Spicy Rice, cursive",
+          fontFamily: "'Waterfall', sans-serif", // Applying the imported font
           color: "#333", // Adjust color to suit your theme
-          fontSize: ["1.2rem", "1.9rem", "2.5rem"], // Responsive font sizes
+          fontSize: ["1.2rem", "1.9rem", "3rem"], // Responsive font sizes
         }}
       >
         Not just an app, your core memories wall.
