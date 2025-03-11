@@ -22,11 +22,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,10 +32,7 @@ const Navbar = () => {
   }, []);
 
   const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
       return;
     }
     setDrawerOpen(open);
@@ -53,12 +46,7 @@ const Navbar = () => {
   ];
 
   const drawerContent = (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
         {navLinks.map((link) => (
           <ListItem key={link.label} disablePadding>
@@ -88,30 +76,29 @@ const Navbar = () => {
           backgroundColor: isScrolled ? "rgba(35, 1, 44, 0.8)" : "transparent",
           transition: "background-color 0.3s ease",
           boxShadow: isScrolled ? 3 : 0,
-          paddingLeft: { xs: 0, sm: 0, md: 10, lg: 15, xl: 20 }, // Adjusts left padding for each breakpoint
-          paddingRight: { xs: 7, sm: 8, md: 10, lg: 15, xl: 20 }, // Adjusts right padding for each breakpoint
+          px: { xs: 2, sm: 3, md: 10, lg: 15, xl: 20 },
         }}
       >
-        <Toolbar>
-          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <Box
               component="img"
-              src="/logo.png" // Update with your actual path
+              src="/logo.png"
               alt="Comuni Logo"
               sx={{
-                height: 70, // Adjust the size as needed
-                marginRight: -3,
-                marginTop: "-13px", // Move the logo up by 10px, adjust as needed
+                height: { xs:25, sm: 35, md: 35 },
+                width: "auto",
+                marginRight: 1,
               }}
             />
-
             <Box
               component="img"
-              src="/textlogo.png" // Update with the actual path for textlogo.png
+              src="/textlogo.png"
               alt="Comuni Text Logo"
               sx={{
-                height: 120, // Adjust height as needed
-                objectFit: "contain", // Ensures the image fits well within its container
+                height: { xs: 17, sm: 20, md: 25 },
+                width: "auto",
+                objectFit: "contain",
               }}
             />
           </Box>
@@ -125,7 +112,7 @@ const Navbar = () => {
                 sx={{
                   mx: 2,
                   textDecoration: "none",
-                  fontFamily: "Boogaloo, cursive", // Apply Boogaloo font
+                  fontFamily: "Boogaloo, cursive",
                   fontSize: "1.2rem",
                 }}
               >

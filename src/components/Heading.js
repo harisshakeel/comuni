@@ -11,9 +11,11 @@ const Heading = ({ heading, subheading }) => {
 
   useEffect(() => {
     setAnimateBox(true);
+    
+    // Reduce delay to 2.5s for faster transition
     const textAnimationTimeout = setTimeout(() => {
       setAnimateText(true);
-    }, 2700);
+    }, 2500);
 
     return () => clearTimeout(textAnimationTimeout);
   }, []);
@@ -25,20 +27,17 @@ const Heading = ({ heading, subheading }) => {
         backgroundColor: "#f6a6ff",
         padding: 0,
         margin: 0,
-        height: {
-          xs: "70vh",
-          sm: "90vh",
-          md: "90vh",
-        },
+        height: { xs: "70vh", sm: "90vh", md: "90vh" },
         overflow: "hidden",
         display: "flex",
       }}
     >
+      {/* Sliding Box */}
       <Box
         sx={{
           position: "relative",
           left: animateBox ? 0 : "-40%",
-          width: { xs: "45%", md: "35%" }, // 45% on mobile, 35% on tablet/desktop
+          width: { xs: "45%", md: "35%" },
           height: "100%",
           backgroundImage: "url('/headphone.png')",
           backgroundSize: "97% auto",
@@ -46,14 +45,14 @@ const Heading = ({ heading, subheading }) => {
           backgroundRepeat: "no-repeat",
           backgroundColor: "#450159",
           zIndex: 1,
-          transition: "left 3.5s ease-in-out",
-          willChange: "left",
+          transition: "left 2.5s ease-in-out", // Faster slide-in
         }}
       />
 
+      {/* Text Section */}
       <Box
         sx={{
-          width: { xs: "55%", md: "65%" }, // 55% on mobile, 65% on tablet/desktop
+          width: { xs: "55%", md: "65%" },
           position: "relative",
         }}
       >
@@ -65,7 +64,7 @@ const Heading = ({ heading, subheading }) => {
             transform: "translate(-50%, -50%)",
             textAlign: "center",
             zIndex: 2,
-            transition: "top 1.5s ease-in-out, opacity 1s ease-in-out",
+            transition: "top 1.8s ease-in-out, opacity 1.5s ease-in-out", // Faster text animation
             opacity: animateText ? 1 : 0,
           }}
         >

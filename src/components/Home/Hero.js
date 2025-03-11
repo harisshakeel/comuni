@@ -29,6 +29,7 @@ const Hero = () => {
           left: 0,
           width: "100%",
           height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.3)", // Tint overlay (adjust opacity/color as needed)
           zIndex: 1,
         },
       }}
@@ -110,27 +111,12 @@ const Hero = () => {
                 transform: "scale(0.98)",
               },
             }}
-            href="#about"
+            href="about"
           >
             LEARN MORE!
           </Button>
         </motion.div>
       </Container>
-
-      {/* Wavy bottom */}
-      {/* <Box
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: "100vw",
-          height: "100px",
-          background: "white",
-          border: "none", // Remove any potential border
-          clipPath:
-            "path('M0 80 Q300 40 600 80 T1200 80 T1800 80 T2400 80 T3000 80 V100 H0 Z')", // Reduced wave amplitude
-        }}
-      /> */}
     </Box>
   );
 };

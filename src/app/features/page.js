@@ -19,7 +19,6 @@ import {
   QrCode,
   Share2,
 } from "lucide-react";
-
 import Heading from "../../components/Heading";
 import Comingsoon from "../../components/Comingsoon";
 import "@fontsource/boogaloo"; // Import Boogaloo font
@@ -31,70 +30,63 @@ export default function Features() {
       title: "Interactive Map",
       description:
         "Discover events happening in your area with our real-time, dynamic map.",
+      image: "/images/map.jpg",
     },
     {
       icon: Users,
       title: "Friend Rating System",
       description:
         "Build meaningful connections through shared activities and interactions.",
+      image: "/images/friends.jpg",
     },
     {
       icon: Calendar,
       title: "Event Planning",
       description:
         "Create and manage events with ease, setting dates, times, and locations.",
+      image: "/images/calendar.jpg",
     },
     {
       icon: MessageSquare,
       title: "Integrated Messaging",
       description:
         "Chat with friends and share event details directly within the app.",
+      image: "/images/messaging.jpg",
     },
     {
       icon: Camera,
       title: "Media Sharing",
       description:
         "Capture and share memories through photos and videos at events.",
+      image: "/images/camera.jpg",
     },
     {
       icon: Navigation,
       title: "Route Planning",
       description: "Get custom routes to events for seamless navigation.",
+      image: "/images/navigation.jpg",
     },
     {
       icon: Star,
       title: "Safety Ratings",
       description:
         "Make informed decisions with our transparent safety rating system.",
+      image: "/images/safety.jpg",
     },
     {
       icon: QrCode,
       title: "Digital Tickets",
       description: "Quick and easy check-ins with QR code tickets.",
+      image: "/images/qr.jpg",
     },
     {
       icon: Share2,
       title: "Easy Sharing",
       description:
         "Share tickets and event details with friends effortlessly.",
+      image: "/images/sharing.jpg",
     },
   ];
-
-  // Compute fixed random heights for each card (between 18rem and 25rem)
-  const cardHeights = useMemo(
-    () =>
-      services.map(
-        () => `${Math.floor(Math.random() * (25 - 18 + 1) + 18)}rem`
-      ),
-    []
-  );
-
-  // Compute a fixed random vertical offset for each card's content (between 0rem and 4rem)
-  const contentOffsets = useMemo(
-    () =>
-      services.map(() => `${Math.floor(Math.random() * 5)}rem`),
-    []
-  );
 
   return (
     <div>
@@ -119,35 +111,34 @@ export default function Features() {
                   <Grid item xs={12} sm={6} md={6} key={index}>
                     <Card
                       sx={{
-                        background: "#ea29fa",
-                        color: "white",
-                        minHeight: cardHeights[index],
+                        position: "relative",
+                        background: `url(${service.image}) center/cover`,
+                        minHeight: "22rem",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        padding: "1rem",
-                        "&:hover": { boxShadow: 6 },
-                        transition: "box-shadow 0.3s",
+                        overflow: "hidden",
+                        borderRadius: "10px",
+                        "&:hover .overlay": { left: 0 }, // Slide effect on hover
                       }}
                     >
-                      <CardHeader
-                        avatar={
-                          <Avatar
-                            sx={{
-                              backgroundColor: "white",
-                              width: 50,
-                              height: 50,
-                              p: 1,
-                            }}
-                          >
-                            <service.icon size={30} color="#800080" />
-                          </Avatar>
-                        }
-                      />
-                      <CardContent
+                      <Box
+                        className="overlay"
                         sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: "-100%", // Initially hidden
+                          width: "100%",
+                          height: "100%",
+                          background: "rgba(234, 41, 250, 0.9)", // Pink overlay
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
                           textAlign: "center",
-                          marginTop: contentOffsets[index], // Fixed vertical offset
+                          padding: "1rem",
+                          transition: "left 0.5s ease-in-out",
                         }}
                       >
                         <Typography
@@ -164,15 +155,26 @@ export default function Features() {
                         </Typography>
                         <Typography
                           variant="body2"
-                          color="white"
-                          sx={{
-                            fontSize: "1rem",
-                            padding: "0.5rem 0",
-                          }}
+                          sx={{ fontSize: "1rem", padding: "0.5rem 0" }}
                         >
                           {service.description}
                         </Typography>
-                      </CardContent>
+                      </Box>
+
+                      <CardHeader
+                        avatar={
+                          <Avatar
+                            sx={{
+                              backgroundColor: "white",
+                              width: 50,
+                              height: 50,
+                              p: 1,
+                            }}
+                          >
+                            <service.icon size={30} color="#800080" />
+                          </Avatar>
+                        }
+                      />
                     </Card>
                   </Grid>
                 ))}

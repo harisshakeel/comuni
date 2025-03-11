@@ -28,7 +28,7 @@ const Owners = () => {
               }}
             ></Box>
             <img
-              src="/image (1).jpg"
+              src="/shoz.jpeg"
               alt="Shozaib Haroon"
               style={{
                 position: "absolute",
@@ -46,10 +46,10 @@ const Owners = () => {
 
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
-            Meet Shozaib Haroon
+            Meet Shozib Haroon
           </Typography>
           <Typography variant="body1" sx={{ mb: 2, color: "text.secondary" }}>
-            Shozaib is a visionary leader with a passion for innovation and
+            Shozib is a visionary leader with a passion for innovation and
             collaboration. His experience and expertise have been instrumental
             in shaping the values and mission of our organization.
           </Typography>
