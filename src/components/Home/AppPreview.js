@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Grid, Button } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { CalendarToday } from "@mui/icons-material";
 
 export default function AppPreview() {
@@ -104,18 +104,37 @@ export default function AppPreview() {
                   overflow: "hidden",
                   background:
                     "linear-gradient(to bottom right, #ea29fa, #ff0151)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                <img
-                  src="/placeholder.svg?height=564&width=264"
+                {/* Rotating Logo */}
+                <Box
+                  component="img"
+                  src="/Logos/logo.png"
                   alt="Communi App Interface"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  sx={{
+                    maxWidth: "80%",
+                    maxHeight: "80%",
+                    animation: "rotateLogo 30s linear infinite",
+                  }}
                 />
               </Box>
             </Box>
           </Grid>
         </Grid>
       </Box>
+
+      {/* Global Style for Animation */}
+      <style>
+        {`
+          @keyframes rotateLogo {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}
+      </style>
     </section>
   );
 }
