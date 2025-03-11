@@ -83,7 +83,7 @@ const Memories = () => {
               marginY: "2rem", // Add some vertical spacing
             }}
           >
-            <Polaroid imgUrl={`/image (${index + 1}).jpg`} caption={caption} />
+            <Polaroid imgUrl={`/Polaroids/image (${index + 1}).jpg`} caption={caption} />
           </Grid>
         ))}
       </Grid>
