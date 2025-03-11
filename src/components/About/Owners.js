@@ -28,7 +28,7 @@ const Owners = () => {
               }}
             ></Box>
             <img
-              src="/shoz.jpeg"
+              src="/Polaroids/image (1).jpg"
               alt="Shozaib Haroon"
               style={{
                 position: "absolute",
@@ -80,7 +80,7 @@ const Owners = () => {
       <Grid container spacing={4} alignItems="center" sx={{ mt: 6 }}>
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
-            Meet Thomas Vessete
+            Meet Thomas Vettese
           </Typography>
           <Typography variant="body1" sx={{ mb: 2, color: "text.secondary" }}>
             Thomas is a dynamic and dedicated professional committed to
@@ -132,7 +132,7 @@ const Owners = () => {
               }}
             ></Box>
             <img
-              src="/image (2).jpg"
+              src="Polaroids/image (3).jpg"
               alt="Thomas Vessete"
               style={{
                 position: "absolute",

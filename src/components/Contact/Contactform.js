@@ -22,7 +22,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" style={{ padding: "6rem 0", height: "90vh" }}>
+    <section id="contact" style={{ padding: "6rem 0", height: "auto" }}>
       <Box maxWidth="lg" mx="auto" px={3} height="100%">
         <Grid container spacing={4} height="100%">
           {/* Left Section: Heading, Description, Contact Info */}
